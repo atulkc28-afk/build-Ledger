@@ -1,0 +1,6 @@
+{
+  "name": "BuildLedger",
+  "description": "Residential construction financial transparency platform connecting homeowners and contractors with traceable expenses, material purchases, deliveries, payments, and progress updates.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

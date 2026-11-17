@@ -1,0 +1,1378 @@
+# MASTER PROMPT — Build a Residential Construction Financial Transparency Platform
+
+## 1. YOUR ROLE
+
+Act as a Senior UI/UX Designer, Product Designer, Frontend Developer, and SaaS Product Architect with extensive experience building modern, production-quality web applications.
+
+Your task is to design and develop a complete, responsive, interactive web application based on the product requirements below.
+
+Do not create a generic construction management dashboard. Build a purpose-driven product that solves a specific problem: **helping homeowners monitor construction expenses, material purchases, contractor payments, and construction progress with greater transparency and accountability.**
+
+The application should look and feel like a professional commercial SaaS product that could realistically be launched and used by homeowners and small construction contractors in India.
+
+Prioritise:
+- Excellent user experience.
+- Simple and intuitive navigation.
+- Financial clarity and transparency.
+- Professional visual design.
+- Consistent components and layouts.
+- Realistic interactions and workflows.
+- Responsive design across desktop, tablet, and mobile.
+
+Do not sacrifice usability for visual decoration.
+
+---
+
+# 2. PRODUCT OVERVIEW
+
+### Product concept
+
+A residential construction financial transparency platform that connects homeowners and contractors through a centralised digital workspace.
+
+The platform allows homeowners to monitor how their construction budget is being used, what materials are purchased, what quantities are delivered, what payments are made, and what progress has been reported.
+
+Contractors can record expenses, purchases, material deliveries, labour costs, payments, and construction updates.
+
+Homeowners can review these records, acknowledge submitted information, identify discrepancies, and monitor the project's financial condition.
+
+### Core product promise
+
+"Every expense recorded. Every purchase traceable. Every payment accounted for."
+
+### Primary users
+
+**1. Homeowner**
+
+The person financing and monitoring the residential construction project.
+
+Their primary needs:
+- Monitor total construction expenditure.
+- Compare actual expenses against the estimated budget.
+- Review contractor-submitted expenses.
+- Track material purchases and deliveries.
+- Monitor payments made and outstanding amounts.
+- View construction progress updates.
+- Access invoices, bills, receipts, and other documents.
+- Raise questions or disputes about submitted records.
+
+**2. Contractor**
+
+The person or organisation managing the construction work.
+
+Their primary needs:
+- Manage multiple construction projects.
+- Record project expenses.
+- Add material purchases and supplier details.
+- Record material deliveries.
+- Track payments and outstanding amounts.
+- Upload bills, invoices, and receipts.
+- Submit progress updates.
+- Respond to homeowner queries.
+
+### Important product principle
+
+The platform records, organises, and displays information submitted by users.
+
+It must not claim that an uploaded invoice is automatically authentic, that materials have been independently verified, or that construction quality has been professionally inspected.
+
+A homeowner's approval represents acknowledgement of submitted information, not independent professional verification.
+
+---
+
+# 3. TECHNOLOGY AND DEVELOPMENT REQUIREMENTS
+
+Build the frontend using the following preferred technologies:
+
+- React.js
+- TypeScript
+- Tailwind CSS
+- Modern reusable component architecture.
+- Lucide icons.
+- Recharts for charts and financial visualisations.
+- React Router for navigation.
+- A clean, maintainable folder structure.
+
+If the development environment provides an existing framework or component library, use compatible alternatives without compromising the requirements.
+
+### Backend readiness
+
+For the initial development:
+- Build a fully functional frontend.
+- Use realistic mock data.
+- Use local state and persistent browser storage where appropriate.
+- Make all major buttons, forms, tabs, filters, and navigation elements interactive.
+- Structure the application so that a real backend and database can be integrated later.
+- Keep data handling separate from presentation components.
+
+Do not make unnecessary API calls or introduce external services.
+
+Do not create fake payment processing functionality.
+
+---
+
+# 4. VISUAL DESIGN SYSTEM
+
+The application should have a premium, modern, minimal, trustworthy SaaS aesthetic.
+
+### Design direction
+
+Take inspiration from the visual quality and usability of products such as Linear, Stripe Dashboard, Notion, and modern financial management platforms.
+
+Do not copy their interfaces.
+
+The design should communicate:
+- Trust.
+- Financial clarity.
+- Accountability.
+- Professionalism.
+- Simplicity.
+- Reliability.
+
+### Colour palette
+
+Use a restrained colour palette.
+
+Primary:
+- Deep navy: #172B4D
+- Dark charcoal: #20252D
+- White: #FFFFFF
+
+Secondary:
+- Light background: #F7F8FA
+- Border: #E6E9EF
+- Secondary text: #707987
+- Muted background: #F0F2F5
+
+Status colours:
+- Green for completed, paid, and approved.
+- Amber for pending and awaiting review.
+- Red for overdue, disputed, or exceeded budget.
+- Blue for informational statuses.
+
+Avoid excessive gradients, neon colours, bright decorative backgrounds, and unnecessary shadows.
+
+### Typography
+
+Use Inter or a similar modern sans-serif font.
+
+Typography hierarchy:
+- Large, clear dashboard headings.
+- Medium-weight section headings.
+- Readable body text.
+- Smaller muted metadata.
+- Prominent financial figures.
+
+### Component styling
+
+- Rounded cards with approximately 10–14px radius.
+- Subtle borders.
+- Minimal shadows.
+- Consistent spacing.
+- Clear button hierarchy.
+- Clean tables.
+- Well-designed dropdowns and modals.
+- Consistent icon sizing.
+- Proper hover, focus, active, and disabled states.
+
+### General layout
+
+For desktop:
+- Fixed or sticky left sidebar.
+- Top navigation/header.
+- Main content area.
+- Responsive page width.
+- Consistent content spacing.
+
+For mobile:
+- Collapsible sidebar or mobile navigation.
+- Stacked dashboard cards.
+- Horizontally scrollable data tables where appropriate.
+- Mobile-friendly forms.
+- Easily accessible primary actions.
+
+---
+
+# 5. APPLICATION STRUCTURE AND NAVIGATION
+
+Create two distinct experiences based on user roles.
+
+## A. HOMEOWNER APPLICATION
+
+The homeowner should have the following sidebar navigation:
+
+1. Overview
+2. Expenses
+3. Materials & Purchases
+4. Payments
+5. Progress
+6. Documents
+7. Approvals & Disputes
+8. Reports
+9. Project Settings
+
+The sidebar should also include:
+- Current project selector.
+- User profile.
+- Notification indicator.
+- Logout option.
+
+## B. CONTRACTOR APPLICATION
+
+The contractor should have the following sidebar navigation:
+
+1. Dashboard
+2. My Projects
+3. Expenses
+4. Material Purchases
+5. Deliveries
+6. Payments
+7. Progress Updates
+8. Documents
+9. Notifications
+10. Profile & Settings
+
+The contractor should be able to switch between projects if multiple projects are assigned.
+
+The interface should make the difference between homeowner and contractor permissions clear.
+
+Do not display actions that a user does not have permission to perform.
+
+---
+
+# 6. HOMEOWNER INTERFACE — PAGE REQUIREMENTS
+
+## PAGE 1: HOMEOWNER OVERVIEW DASHBOARD
+
+This is the most important page.
+
+Create a polished financial overview dashboard.
+
+### Header
+
+Display:
+- Greeting: "Good morning, [User Name]"
+- Project name.
+- Project location.
+- Project status.
+- Notification icon.
+- Profile dropdown.
+
+Example project:
+"Greenwood Residence"
+
+Location:
+"Bengaluru, Karnataka"
+
+Project status:
+"In Progress"
+
+### Financial summary cards
+
+Display four prominent cards:
+
+**1. Total Budget**
+Example: ₹35,00,000
+
+**2. Total Expenses**
+Example: ₹18,45,000
+
+**3. Remaining Budget**
+Example: ₹16,55,000
+
+**4. Pending Payments**
+Example: ₹2,40,000
+
+Each card should have:
+- Title.
+- Prominent amount.
+- Relevant icon.
+- Supporting information.
+- Appropriate status indicator.
+
+Make sure calculations are logically consistent.
+
+### Budget utilisation
+
+Create a prominent budget utilisation component.
+
+Show:
+- Total approved budget.
+- Total recorded expenses.
+- Remaining budget.
+- Percentage of budget utilised.
+
+Use a progress bar or donut chart.
+
+Example:
+Budget: ₹35,00,000
+Spent: ₹18,45,000
+Remaining: ₹16,55,000
+Utilisation: 52.7%
+
+### Expense overview chart
+
+Create a chart displaying expenses over time.
+
+Allow switching between:
+- Weekly.
+- Monthly.
+- All time.
+
+Use realistic sample data.
+
+### Expense category breakdown
+
+Show a donut chart or horizontal bar chart for categories such as:
+- Cement.
+- Steel.
+- Sand and aggregates.
+- Bricks and blocks.
+- Labour.
+- Electrical.
+- Plumbing.
+- Other expenses.
+
+### Recent activities
+
+Display a timeline of recent project activities.
+
+Example:
+- Contractor added a cement purchase of ₹42,000.
+- 200 cement bags delivery recorded.
+- Homeowner acknowledged an expense.
+- Labour payment of ₹18,000 recorded.
+- Construction progress updated to 45%.
+
+Each activity should show:
+- Activity description.
+- User who performed the action.
+- Date and time.
+- Status where relevant.
+
+### Pending actions
+
+Create a dedicated section showing:
+- Expenses awaiting homeowner review.
+- Payments due.
+- Material deliveries awaiting acknowledgement.
+- New progress updates.
+
+Each item should have a clear action button.
+
+### Dashboard design priority
+
+The homeowner should understand the financial condition of the project within five seconds of opening the dashboard.
+
+Avoid cluttering the dashboard with unnecessary information.
+
+---
+
+## PAGE 2: EXPENSE MANAGEMENT
+
+Create a detailed expense management page.
+
+### Top section
+
+Display:
+- Page title: Expenses.
+- Total expenses.
+- Pending review amount.
+- Approved expenses.
+- Search bar.
+- Date filter.
+- Category filter.
+- Status filter.
+
+Provide a prominent "Add Expense" action only for users with the appropriate permissions.
+
+### Expense table
+
+Columns:
+
+| Column | Information |
+|---|---|
+| Expense ID | Unique reference |
+| Description | Expense title |
+| Category | Expense category |
+| Vendor | Supplier or service provider |
+| Amount | Expense amount |
+| Date | Expense date |
+| Submitted By | User who recorded it |
+| Status | Pending / Approved / Disputed |
+| Action | View details |
+
+Use realistic sample entries.
+
+### Expense details
+
+Clicking an expense should open a detailed page, drawer, or modal.
+
+Show:
+- Expense ID.
+- Description.
+- Category.
+- Amount.
+- Date.
+- Vendor.
+- Payment method.
+- Linked purchase, if applicable.
+- Associated construction stage.
+- Uploaded invoices or receipts.
+- Submitted by.
+- Submission timestamp.
+- Approval history.
+- Notes and comments.
+
+For the homeowner:
+- Acknowledge / Approve.
+- Raise a Dispute.
+- Add a Comment.
+
+For the contractor:
+- Edit permitted details.
+- Upload supporting documents.
+- View homeowner feedback.
+
+### Add expense form
+
+Create a clean multi-field form with:
+
+- Expense description.
+- Expense category.
+- Amount in INR.
+- Expense date.
+- Vendor.
+- Payment method.
+- Linked purchase, if applicable.
+- Construction stage.
+- Notes.
+- Invoice or receipt upload.
+
+Include:
+- Required field validation.
+- Currency formatting.
+- Clear error messages.
+- Save Draft.
+- Submit Expense.
+
+Do not make the form unnecessarily complicated.
+
+---
+
+## PAGE 3: MATERIALS & PURCHASES
+
+Create a page to manage construction material purchases.
+
+### Summary cards
+
+- Total purchase value.
+- Total purchase orders.
+- Pending deliveries.
+- Completed deliveries.
+
+### Purchase table
+
+Columns:
+- Purchase ID.
+- Material name.
+- Supplier.
+- Quantity ordered.
+- Unit.
+- Unit price.
+- Total amount.
+- Purchase date.
+- Delivery status.
+- Action.
+
+### Material categories
+
+Include:
+- Cement.
+- Steel.
+- Sand.
+- Aggregates.
+- Bricks.
+- Blocks.
+- Tiles.
+- Electrical materials.
+- Plumbing materials.
+- Paint.
+- Other.
+
+### Purchase details page
+
+When a purchase is selected, show:
+
+**Purchase Information**
+- Purchase ID.
+- Material.
+- Supplier.
+- Quantity ordered.
+- Unit price.
+- Total purchase value.
+- Purchase date.
+- Associated invoice.
+
+**Delivery Information**
+- Quantity delivered.
+- Quantity pending.
+- Delivery dates.
+- Delivery records.
+- Delivery documents.
+- Recorded by.
+
+**Financial Information**
+- Total purchase value.
+- Amount paid.
+- Amount pending.
+- Linked payment records.
+
+### Important interaction
+
+A single purchase may have multiple deliveries.
+
+Example:
+
+Material: Cement
+
+Quantity ordered: 500 bags
+
+Delivery 1: 200 bags
+
+Delivery 2: 150 bags
+
+Delivery 3: 150 bags
+
+Display delivered and remaining quantities accurately.
+
+Do not automatically mark a purchase as fully delivered until the recorded delivered quantity reaches the ordered quantity.
+
+Create a clear visual delivery progress indicator.
+
+### Add purchase form
+
+Fields:
+- Material name.
+- Category.
+- Supplier.
+- Quantity.
+- Unit.
+- Unit price.
+- Total amount (automatically calculated).
+- Purchase date.
+- Expected delivery date.
+- Invoice upload.
+- Notes.
+
+---
+
+## PAGE 4: PAYMENTS
+
+This page must clearly distinguish between expenses and payments.
+
+An expense represents a recorded financial obligation or cost.
+
+A payment represents money actually paid.
+
+Do not count the same transaction twice in financial summaries.
+
+### Payment overview
+
+Show:
+- Total amount paid.
+- Pending amount.
+- Number of completed payments.
+- Overdue payments.
+
+### Payment table
+
+Columns:
+- Payment ID.
+- Related expense or purchase.
+- Recipient.
+- Amount.
+- Payment date.
+- Payment method.
+- Reference number.
+- Status.
+- Action.
+
+### Payment details
+
+Show:
+- Payment ID.
+- Linked expense or purchase.
+- Recipient.
+- Total amount owed.
+- Amount paid.
+- Outstanding amount.
+- Payment history.
+- Payment proof.
+- Recorded by.
+
+Support multiple partial payments against the same purchase or expense.
+
+Example:
+
+Total amount owed: ₹50,000
+
+Payment 1: ₹20,000
+
+Payment 2: ₹15,000
+
+Remaining amount: ₹15,000
+
+### Add payment form
+
+Fields:
+- Linked expense or purchase.
+- Recipient.
+- Amount paid.
+- Payment date.
+- Payment method.
+- Transaction/reference number.
+- Payment proof upload.
+- Notes.
+
+Payment methods:
+- UPI.
+- Bank transfer.
+- Cash.
+- Cheque.
+- Other.
+
+Do not integrate real payment processing.
+
+---
+
+## PAGE 5: CONSTRUCTION PROGRESS
+
+Create a visual construction progress tracking interface.
+
+### Progress overview
+
+Display:
+- Overall reported progress.
+- Current construction stage.
+- Latest update date.
+- Number of completed stages.
+
+### Construction stages
+
+Use the following example stages:
+
+1. Site Preparation.
+2. Foundation.
+3. Structural Framework.
+4. Brickwork.
+5. Roofing.
+6. Electrical & Plumbing.
+7. Plastering.
+8. Flooring.
+9. Painting.
+10. Finishing.
+
+Represent these as a visual timeline or progress tracker.
+
+### Stage details
+
+Each stage should display:
+- Stage name.
+- Status.
+- Reported progress.
+- Start date.
+- Expected completion date.
+- Actual completion date, if applicable.
+- Recent updates.
+- Uploaded photographs.
+- Contractor notes.
+
+Statuses:
+- Not Started.
+- In Progress.
+- Completed.
+- Delayed.
+
+### Progress updates
+
+Display progress updates in chronological order.
+
+Each update should contain:
+- Date.
+- Description.
+- Reported percentage, if applicable.
+- Uploaded photographs.
+- Submitted by.
+- Homeowner acknowledgement status.
+
+Allow the contractor to submit progress updates.
+
+Allow the homeowner to view and acknowledge updates or raise concerns.
+
+Important: Progress percentages are user-reported and must not be represented as independently verified construction measurements.
+
+---
+
+## PAGE 6: DOCUMENT MANAGEMENT
+
+Create a centralised document repository.
+
+### Document categories
+
+- Invoices.
+- Receipts.
+- Purchase orders.
+- Payment proofs.
+- Contracts.
+- Progress photographs.
+- Other documents.
+
+### Document interface
+
+Use a clean file-management layout.
+
+Display:
+- Document name.
+- Category.
+- Related expense or purchase.
+- Uploaded by.
+- Upload date.
+- File type.
+- View/download action.
+
+Features:
+- Upload document.
+- Search documents.
+- Filter by category.
+- Filter by date.
+- Preview supported file types.
+- Download document.
+
+Use realistic sample documents and appropriate placeholder previews.
+
+---
+
+## PAGE 7: APPROVALS & DISPUTES
+
+Create a dedicated page for managing homeowner reviews.
+
+### Tabs
+
+1. Pending Reviews.
+2. Approved.
+3. Disputed.
+
+### Pending reviews
+
+Display submitted expenses, purchases, deliveries, and progress updates awaiting acknowledgement.
+
+Each item should show:
+- Reference ID.
+- Description.
+- Submitted by.
+- Amount, if applicable.
+- Submission date.
+- Supporting documents.
+- Review action.
+
+### Review workflow
+
+The homeowner should be able to:
+- Open the submitted record.
+- Review all information.
+- View attached documents.
+- Add a comment.
+- Acknowledge the record.
+- Raise a dispute.
+
+### Dispute workflow
+
+When a homeowner raises a dispute:
+- Open a dispute form.
+- Ask for the reason.
+- Allow a description.
+- Allow supporting attachments.
+- Submit the dispute.
+
+The contractor should be able to:
+- View the dispute.
+- Read the homeowner's comments.
+- Respond.
+- Upload additional documents.
+- Update the record where permitted.
+
+Maintain a visible status history.
+
+Do not automatically treat silence or inactivity as approval.
+
+---
+
+## PAGE 8: REPORTS & ANALYTICS
+
+Create a professional reporting dashboard.
+
+### Report sections
+
+**1. Financial Summary**
+- Total budget.
+- Total expenses.
+- Total paid.
+- Outstanding payments.
+- Remaining budget.
+
+**2. Category-wise Expenses**
+- Category.
+- Total amount.
+- Percentage of total expenditure.
+
+**3. Monthly Expenditure**
+- Month-wise expenses.
+- Comparison across months.
+
+**4. Budget vs Actual**
+- Estimated allocation.
+- Actual expenses.
+- Remaining allocation.
+- Over-budget indicators.
+
+**5. Material Purchases**
+- Material-wise purchase value.
+- Ordered quantity.
+- Delivered quantity.
+- Pending quantity.
+
+**6. Payment Report**
+- Payments completed.
+- Payments pending.
+- Partial payments.
+- Outstanding amounts.
+
+### Export functionality
+
+Provide:
+- Export to PDF.
+- Export to Excel.
+- Print report.
+
+If actual export libraries are unavailable, create the interface and implement CSV export as a working fallback.
+
+---
+
+## PAGE 9: PROJECT SETTINGS
+
+Display:
+- Project name.
+- Project location.
+- Project description.
+- Homeowner details.
+- Assigned contractor.
+- Project start date.
+- Expected completion date.
+- Total approved budget.
+- Project status.
+- Project members and permissions.
+
+Allow authorised users to edit appropriate project details.
+
+Include a section for inviting project members.
+
+---
+
+# 7. CONTRACTOR INTERFACE — PAGE REQUIREMENTS
+
+The contractor experience should be operationally efficient.
+
+The contractor should be able to record information quickly without navigating through unnecessary screens.
+
+## CONTRACTOR DASHBOARD
+
+Display:
+
+### Summary cards
+- Active Projects.
+- Total Expenses Recorded.
+- Pending Homeowner Reviews.
+- Outstanding Payments.
+
+### Project overview
+
+Show project cards containing:
+- Project name.
+- Homeowner name.
+- Location.
+- Budget.
+- Total recorded expenditure.
+- Reported progress.
+- Current status.
+
+### Quick actions
+
+Provide buttons for:
+- Add Expense.
+- Add Material Purchase.
+- Record Delivery.
+- Record Payment.
+- Submit Progress Update.
+
+### Recent activity
+
+Show recent actions across assigned projects.
+
+### Pending actions
+
+Show:
+- Homeowner disputes.
+- Records requiring additional documents.
+- Pending reviews.
+- Upcoming delivery dates.
+
+---
+
+## CONTRACTOR PROJECT MANAGEMENT
+
+Create a project list with:
+- Project name.
+- Homeowner.
+- Location.
+- Budget.
+- Recorded expenses.
+- Progress.
+- Status.
+
+Clicking a project should open a detailed project workspace.
+
+The workspace should contain the same financial and operational modules, but with contractor-specific permissions.
+
+---
+
+## CONTRACTOR DATA ENTRY
+
+All contractor forms must be simple and practical.
+
+Avoid excessive fields.
+
+The contractor should be able to:
+- Add an expense in a few steps.
+- Record a material purchase.
+- Record partial material delivery.
+- Upload invoices and receipts.
+- Record payments.
+- Add construction progress updates.
+- Respond to homeowner disputes.
+
+Use appropriate dropdowns, date pickers, file uploads, number inputs, and validation.
+
+After successful submission:
+- Show a clear success notification.
+- Update the relevant table and summary.
+- Add the activity to the recent activity timeline.
+
+---
+
+# 8. AUTHENTICATION AND USER EXPERIENCE
+
+Create the following authentication screens:
+
+1. Login.
+2. Sign Up.
+3. Forgot Password.
+4. Role Selection, where appropriate.
+
+### Login screen
+
+Fields:
+- Email.
+- Password.
+
+Include:
+- Remember me.
+- Forgot password.
+- Login button.
+- Sign-up link.
+
+### Registration
+
+Allow registration as:
+- Homeowner.
+- Contractor.
+
+The visual design should be consistent with the main application.
+
+For frontend demonstration, implement mock authentication or a role-switching demo.
+
+Provide a clear way to switch between homeowner and contractor demo experiences.
+
+Do not leave users stuck on a login screen during demonstration.
+
+---
+
+# 9. SAMPLE DATA AND REALISTIC CONTENT
+
+Populate the application with realistic Indian residential construction data.
+
+Use INR formatting throughout.
+
+Use the Indian numbering system.
+
+Examples:
+- ₹35,00,000
+- ₹18,45,000
+- ₹2,40,000
+
+Example project:
+
+Project Name: Greenwood Residence
+
+Location: Bengaluru, Karnataka
+
+Total Budget: ₹35,00,000
+
+Recorded Expenses: ₹18,45,000
+
+Reported Progress: 48%
+
+Project Status: In Progress
+
+Example expense categories:
+- Cement.
+- Steel.
+- Sand.
+- Bricks.
+- Labour.
+- Electrical.
+- Plumbing.
+- Flooring.
+- Painting.
+- Other.
+
+Use realistic Indian supplier names, dates, quantities, and construction terminology.
+
+Avoid generic placeholder content such as:
+- Lorem ipsum.
+- Test User.
+- Sample Text.
+- Random Product.
+
+Use meaningful data throughout.
+
+Ensure that financial figures remain internally consistent across the dashboard, expense records, purchase records, and payment records.
+
+---
+
+# 10. FUNCTIONAL INTERACTION REQUIREMENTS
+
+This is extremely important.
+
+Do not create a static UI or a collection of non-functional screens.
+
+Implement the following interactions:
+
+### Navigation
+- Sidebar navigation must work.
+- Every navigation item must open the correct page.
+- Active page must be visually highlighted.
+- Breadcrumbs should work where relevant.
+
+### Search and filters
+- Search should filter relevant records.
+- Date filters should work.
+- Category filters should work.
+- Status filters should work.
+
+### Forms
+- All major forms must accept user input.
+- Required fields must be validated.
+- Amounts must be calculated correctly.
+- Forms should show appropriate error messages.
+- Successful submissions should update the interface.
+
+### Tables
+- Support sorting where appropriate.
+- Support pagination or sensible record limits.
+- Clicking a record should open its details.
+- Status labels must be visually distinguishable.
+
+### Financial calculations
+- Remaining budget = Total budget − Total recorded expenses.
+- Outstanding payment = Total amount owed − Total payments recorded against it.
+- Delivered quantity = Sum of recorded delivery quantities.
+- Pending quantity = Ordered quantity − Delivered quantity.
+- Budget utilisation = Total recorded expenses / Total budget × 100.
+
+Do not count payments as additional expenses.
+
+Prevent negative pending quantities and invalid financial values.
+
+### Notifications
+Display notifications for:
+- New expense submissions.
+- Homeowner acknowledgements.
+- Disputes.
+- Contractor responses.
+- New progress updates.
+- Payment records.
+
+### Modal and drawer behaviour
+- Add forms should open in appropriate modals, drawers, or dedicated pages.
+- Confirmation dialogs should appear before destructive actions.
+- Provide clear success and error feedback.
+
+### Empty states
+Design proper empty states for:
+- No expenses.
+- No purchases.
+- No payments.
+- No progress updates.
+- No documents.
+- No pending approvals.
+
+Each empty state should explain what belongs there and provide a relevant action when permitted.
+
+---
+
+# 11. RESPONSIVE DESIGN
+
+The application must work properly on:
+
+- Desktop.
+- Laptop.
+- Tablet.
+- Mobile.
+
+Desktop should be the primary design target because financial management and record review are likely to involve larger tables and dashboards.
+
+However, contractor workflows must be particularly comfortable on mobile because contractors may record purchases, deliveries, and progress updates directly from construction sites.
+
+On mobile:
+- Prioritise quick actions.
+- Make forms easy to complete.
+- Use camera-friendly document/photo upload controls.
+- Avoid tiny buttons.
+- Avoid overflowing content.
+- Convert complex tables into suitable mobile cards where necessary.
+
+---
+
+# 12. DESIGN QUALITY REQUIREMENTS
+
+Follow these design principles throughout the application:
+
+1. Consistent spacing and alignment.
+2. Reusable cards, buttons, tables, and forms.
+3. Consistent typography.
+4. Clear visual hierarchy.
+5. Minimal visual clutter.
+6. Proper loading states.
+7. Proper empty states.
+8. Proper validation states.
+9. Accessible colour contrast.
+10. Consistent icon usage.
+
+Avoid:
+- Excessive gradients.
+- Overly rounded cartoon-style components.
+- Unnecessary animations.
+- Too many colours.
+- Large decorative illustrations.
+- Generic admin dashboard templates.
+- Excessive information on a single screen.
+- Inconsistent page layouts.
+- Buttons that do nothing.
+
+Use subtle transitions only where they improve usability.
+
+---
+
+# 13. DATA STRUCTURE AND FRONTEND ARCHITECTURE
+
+Organise the frontend around reusable components and separate feature modules.
+
+Suggested folder structure:
+
+src/
+- components/
+  - layout/
+  - navigation/
+  - dashboard/
+  - charts/
+  - tables/
+  - forms/
+  - modals/
+  - notifications/
+  - common/
+- pages/
+  - auth/
+  - homeowner/
+  - contractor/
+- features/
+  - projects/
+  - expenses/
+  - purchases/
+  - deliveries/
+  - payments/
+  - progress/
+  - documents/
+  - approvals/
+  - reports/
+- hooks/
+- services/
+- data/
+- types/
+- utils/
+
+Create reusable components for:
+- Sidebar.
+- Header.
+- Summary cards.
+- Financial charts.
+- Data tables.
+- Status badges.
+- Form fields.
+- File upload.
+- Confirmation dialogs.
+- Activity timeline.
+- Empty states.
+- Notification dropdown.
+
+Keep business calculations in reusable utility functions instead of duplicating logic across components.
+
+Create TypeScript interfaces for the main entities:
+- User.
+- Project.
+- ProjectMember.
+- Budget.
+- Expense.
+- Vendor.
+- Material.
+- Purchase.
+- Delivery.
+- Payment.
+- ProgressUpdate.
+- Document.
+- Approval.
+- Dispute.
+- AuditLog.
+
+Design the frontend so it can later connect to a PostgreSQL/Supabase backend without rewriting the UI.
+
+---
+
+# 14. IMPORTANT BUSINESS RULES
+
+These rules must be reflected in the interface and frontend behaviour.
+
+1. A homeowner can belong to a project and a contractor can manage multiple projects.
+2. Multiple expenses can be recorded for one project.
+3. One purchase can have multiple delivery records.
+4. One purchase or expense can have multiple partial payments.
+5. Expenses and payments must remain separate records.
+6. Uploading a receipt does not automatically mean that a payment has been made.
+7. Homeowner acknowledgement does not mean professional verification.
+8. Disputed records must remain visible with their dispute history.
+9. Important financial edits should have an audit-history interface.
+10. Users should only see and perform actions permitted by their role.
+11. The system must not automatically approve records because a homeowner has not responded.
+12. Progress updates must be identified as contractor-reported information.
+
+---
+
+# 15. DEVELOPMENT PRIORITIES
+
+Build the application in the following order:
+
+### Priority 1 — Core foundation
+- Authentication screens.
+- Role-based layouts.
+- Sidebar navigation.
+- Project selector.
+- Shared component system.
+- Responsive design.
+
+### Priority 2 — Main dashboards
+- Homeowner dashboard.
+- Contractor dashboard.
+- Financial summary cards.
+- Charts.
+- Activity timelines.
+
+### Priority 3 — Core financial workflows
+- Expenses.
+- Material purchases.
+- Deliveries.
+- Payments.
+
+### Priority 4 — Project monitoring
+- Construction progress.
+- Documents.
+- Approvals.
+- Disputes.
+
+### Priority 5 — Reporting and polish
+- Reports.
+- Export functionality.
+- Notifications.
+- Settings.
+- Empty states.
+- Responsive refinements.
+
+Do not build every screen as a disconnected mockup. The modules must share consistent sample data and behave like parts of one application.
+
+---
+
+# 16. FINAL EXPECTATIONS
+
+Deliver a complete, polished, interactive frontend application.
+
+The finished result should:
+
+- Look like a real commercial SaaS product.
+- Have separate homeowner and contractor experiences.
+- Include all the specified pages.
+- Use realistic Indian construction data.
+- Display consistent INR financial figures.
+- Have working navigation.
+- Have functional forms and filters.
+- Have working dashboard calculations.
+- Support realistic purchase, delivery, expense, and payment workflows.
+- Include proper responsive layouts.
+- Use reusable components and maintainable code.
+- Be structured for future backend integration.
+
+### Critical instruction
+
+Do not stop after generating the dashboard.
+
+Build the complete application experience, including all major pages, navigation, forms, tables, details views, modals, and user interactions.
+
+Do not omit modules simply because they are more complicated.
+
+If the full application is too large to implement in one generation, first establish the complete application architecture and design system, then implement the modules in the priority order above while maintaining a consistent shared design.
+
+Before finishing, test the main user journeys:
+
+**Homeowner journey:**
+1. Login as homeowner.
+2. Open project dashboard.
+3. Review budget and expenses.
+4. Open an expense.
+5. Review supporting documents.
+6. Acknowledge or dispute the record.
+7. Check material deliveries.
+8. Review payments.
+9. View construction progress.
+10. Generate a report.
+
+**Contractor journey:**
+1. Login as contractor.
+2. Open assigned project.
+3. Add an expense.
+4. Record a material purchase.
+5. Record a partial delivery.
+6. Record a payment.
+7. Upload a receipt.
+8. Submit a progress update.
+9. Respond to a homeowner dispute.
+
+The final application must make these journeys possible through the interface.
+
+**The central design objective: Make construction finances understandable to homeowners and construction records easy for contractors to maintain.**
